@@ -15,6 +15,8 @@ export class CoinsComponent implements OnInit {
 
   coins:ICoins[] = [];
 
+  coinParent:ICoins | undefined;
+
   searchText: string = '';
 
   ngOnInit(){
@@ -26,6 +28,10 @@ export class CoinsComponent implements OnInit {
       this.coins = data.data;
       return this.coins
     });
+  }
+
+  selectCoin(choosenCoin:ICoins) {
+    this.coinParent = choosenCoin;
   }
 
 }
