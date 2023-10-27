@@ -1,0 +1,36 @@
+<div class="container">
+
+    <br>
+
+    <div class="d-flex">
+        <form>
+          <div class="form-group">
+            <label for="searchBar" class="form-label">Rechercher une cryptomonnaie</label>
+            <input [(ngModel)]="searchText" type="text" class="form-control" id="searchBar" name="searchBar" placeholder="Bitcoin, ...">
+          </div>
+        </form>
+      </div>
+  
+      <br>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div *ngFor="let coin of coins | filter:searchText">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <h1>{{ coin.name }}</h1>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Classement: {{ coin.rank }}</p>
+          <p class="card-text">Symbole: {{ coin.symbol }}</p>
+          <p class="card-text">Prix actuel (USD): {{ coin.priceUsd | number: '1.0-0' }} $ </p>
+          <p class="card-text">Variation (dernières 24h): {{ coin.changePercent24Hr | number: '1.1-2' }} %</p>
+          <a href="#" class="btn btn-primary">Voir</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <a href="">Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
