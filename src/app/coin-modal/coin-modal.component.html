@@ -6,16 +6,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p class="card-text">ID: {{ coinModal?.id }}</p>
-          <p class="card-text">Rank: {{ coinModal?.rank }}</p>
-          <p class="card-text">Symbol: {{ coinModal?.symbol }}</p>
-          <p class="card-text">Supply: {{ coinModal?.supply | number: '1.0-0'}}</p>
-          <p class="card-text">Max Supply: {{ coinModal?.maxSupply | number: '1.0-0' }}</p>
-          <p class="card-text">Market Cap (USD): {{ coinModal?.marketCapUsd | number: '1.0-0' }}$</p>
-          <p class="card-text">24hr Volume (USD): {{ coinModal?.volumeUsd24Hr | number: '1.0-0' }}$</p>
-          <p class="card-text">Price (USD): {{ coinModal?.priceUsd | number: '1.0-0' }} $</p>
-          <p class="card-text">Change (24hr): {{ coinModal?.changePercent24Hr | number: '1.1-2' }} %</p>
-          <p class="card-text">VWAP (24hr): {{ coinModal?.vwap24Hr }}</p>
+          <p>Classement: {{ coinModal?.rank }}</p>
+          <p>Symbole: {{ coinModal?.symbol }}</p>
+          <p>Supply: {{ coinModal?.supply | number: '1.0-0'}}</p>
+          <p *ngIf="coinModal?.maxSupply !== null">Max supply : {{coinModal?.maxSupply | number: '1.0-0'}}</p>
+          <p *ngIf="coinModal?.maxSupply == null" class="text-danger">Pas d'offre max</p>
+          <p>Market Cap (USD): {{ coinModal?.marketCapUsd | number: '1.0-0' }}$</p>
+          <p>24hr Volume (USD): {{ coinModal?.volumeUsd24Hr | number: '1.0-0' }}$</p>
+          <p>Prix (USD): {{ coinModal?.priceUsd | number: '1.0-0' }} $</p>
+          <p>Change (24hr): {{ coinModal?.changePercent24Hr | number: '1.1-2' }} %</p>
+          <p>VWAP (24hr): {{ coinModal?.vwap24Hr }}</p>
         </div>
 
         <div class="modal-footer">
