@@ -17,14 +17,14 @@
     <div *ngFor="let coin of coins | filter:searchText">
       <div class="card" style="width: 18rem;">
         <div class="card-header">
-          <h1>{{ coin.name }}</h1>
+          <h1>{{ coin.name | uppercase }}</h1>
         </div>
         <div class="card-body">
           <p class="card-text">Classement: {{ coin.rank }}</p>
           <p class="card-text">Symbole: {{ coin.symbol }}</p>
           <p class="card-text">Prix actuel (USD): {{ coin.priceUsd | number: '1.0-0' }} $ </p>
           <p class="card-text">Variation (dernières 24h): {{ coin.changePercent24Hr | number: '1.1-2' }} %</p>
-          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#coinModal">Voir</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#coinModal" (click)="selectCoin(coin)">Voir</button>
         </div>
         <div class="card-footer text-body-secondary">
           <a href="{{ coin.explorer }}">Site</a>

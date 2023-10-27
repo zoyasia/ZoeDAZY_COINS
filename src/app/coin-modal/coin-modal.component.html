@@ -2,16 +2,26 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="coinModalLabel">ernrifn</h1>
+          <h1 class="modal-title fs-5" id="coinModalLabel">{{ coinModal?.name }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p class="modal-title fs-5" id="coinModalLabel">Author</p>
-          <p id="coinModalLabel">coucou</p>
+          <p class="card-text">ID: {{ coinModal?.id }}</p>
+          <p class="card-text">Rank: {{ coinModal?.rank }}</p>
+          <p class="card-text">Symbol: {{ coinModal?.symbol }}</p>
+          <p class="card-text">Supply: {{ coinModal?.supply | number: '1.0-0'}}</p>
+          <p class="card-text">Max Supply: {{ coinModal?.maxSupply | number: '1.0-0' }}</p>
+          <p class="card-text">Market Cap (USD): {{ coinModal?.marketCapUsd | number: '1.0-0' }}$</p>
+          <p class="card-text">24hr Volume (USD): {{ coinModal?.volumeUsd24Hr | number: '1.0-0' }}$</p>
+          <p class="card-text">Price (USD): {{ coinModal?.priceUsd | number: '1.0-0' }} $</p>
+          <p class="card-text">Change (24hr): {{ coinModal?.changePercent24Hr | number: '1.1-2' }} %</p>
+          <p class="card-text">VWAP (24hr): {{ coinModal?.vwap24Hr }}</p>
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
+
       </div>
     </div>
   </div>
